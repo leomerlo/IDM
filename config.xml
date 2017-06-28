@@ -1,46 +1,121 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.souschef.www" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<!-- 
+    Los primeros dos atributos de la etiqueta widget, NO los tocamos (xmlns xmlns:gap). El atributo id, especifica un identificador único para la aplicación, 
+				esto es obligatorio si quisiéramos subir la app al Play Store o App Store. El formato DEBE ser una url invertida.
+	El atriburo version, es el número de versión, que va en el siguiente formato:
+			MAJOR.MINOR.PATCH, donde:
+            Major: Son cambios de versión importantes que rompen
+                   compatibilidad de la app hacia atrás (versiones anteriores).
+            Minor: Son cambios que no rompen la compatibilidad hacia atrás.
+            Patch: Son arreglos de errores, agregados pequeños o parches del código.
+-->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.davinci.ejemplo"
+        version   = "0.1.0">
+	
+    <!-- Esta etiqueta define el NOMBRE de la app (con él va a figurar tanto en el store como en el dispositivo) -->
     <name>Sous Chef</name>
+
+    <!-- Descripción para el Play Store -->
     <description>
-        Tu asistente de cocina.
+        Asistente de cocina.
     </description>
-    <author email="merloleandro@gmail.com" href="http://leomerlo.com">
-        Leo Merlo
+
+    <!-- Los datos del autor para el PlayStore -->
+    <author href="http://www.leomerlo.com" email="merloleandro@gmail.com">
+        	Leandro Merlo
     </author>
-
+	
+	<platform name="android" />
     <preference name="permissions" value="none"/>
-
-    <preference name="target-device" value="universal" />
-
+    <feature name="http://api.phonegap.com/1.0/media" />
+	<feature name="http://api.phonegap.com/1.0/file" />
+    <feature name="http://api.phonegap.com/1.0/camera" />
+	
+	<preference name="phonegap-version" value="cli-6.5.0" />
+	
+    <preference name="orientation" value="portrait" /> 
+	
+    <preference name="target-device" value="universal" /> 
+	
+    <preference name="fullscreen" value="true" /> 
+	
+    <preference name="webviewbounce" value="false" /> 
+	
     <preference name="android-minSdkVersion" value="7" /> 
 	
-    <preference name="android-installLocation" value="auto" />
+    <preference name="android-installLocation" value="auto" /> 
 
-	<preference name="splashScreenDelay" value="4000" />
+	<preference name="splashScreenDelay" value="2000" />
 
-	<platform name="android" />
+	<plugin name="cordova-plugin-camera" source="npm" />
+	<plugin name="cordova-plugin-file" source="npm" />
+	<plugin name="cordova-plugin-media" source="npm" />
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
+	
+	<plugin name="cordova-plugin-statusbar" source="npm"/>
+	<preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#ffff00" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+	
+	<!--style: default lightcontent, blacktranslucent, blackopaque.-->
 
-	<plugin name="cordova-plugin-camera" />
-	<plugin name="cordova-plugin-splashscreen" />   
+    <icon src="icon.png" />
+	
+	<!-- Iconos para cada tipo de resolución y plataforma (descomentar SOLO el que se usa y respetar la ruta donde ubicar el archivo: res/icon/android... el nombre del archivo puede variar)
+	
+    <icon src="res/icon/android/icon-36-ldpi.png" 
+		gap:platform="android" gap:density="ldpi" />
+    <icon src="res/icon/android/icon-48-mdpi.png" 
+		gap:platform="android" gap:density="mdpi" />
+    <icon src="res/icon/android/icon-72-hdpi.png" 
+		gap:platform="android" gap:density="hdpi" />
+    <icon src="res/icon/android/icon-96-xhdpi.png" 
+		gap:platform="android" gap:density="xhdpi" />
+		
+    <icon src="res/icon/ios/icon-57.png" 
+		gap:platform="ios" width="57" height="57" />
+    <icon src="res/icon/ios/icon-72.png" 
+		gap:platform="ios" width="72" height="72" />
+    <icon src="res/icon/ios/icon-57-2x.png" 
+		gap:platform="ios" width="114" height="114" />
+    <icon src="res/icon/ios/icon-72-2x.png" 
+		gap:platform="ios" width="144" height="144" />
+		
+    <icon src="res/icon/webos/icon-64.png" 
+		gap:platform="webos" />
+		
+    <icon src="res/icon/windows-phone/icon-48.png" 
+		gap:platform="winphone" />
+    <icon src="res/icon/windows-phone/icon-173.png" 
+		gap:platform="winphone" gap:role="background" />
+	-->
+    
+  	<gap:splash src="imagenes/splash.png" />
+    
+	<gap:splash src="res/screen/android/splash.png" 
+		gap:platform="android" gap:density="mdpi" />
+		
+	<gap:splash src="res/screen/android/splash_hdpi.png" 
+		gap:platform="android" gap:density="hdpi" />
 
-    <icon src="icon.png" />	
+	<access /> 	
+	
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
     <platform name="android">
-	    <icon src="res/icon/android/icon-36-ldpi.png" density="ldpi" />
-	    <icon src="res/icon/android/icon-48-mdpi.png" density="mdpi" />
-	    <icon src="res/icon/android/icon-72-hdpi.png" density="hdpi" />
-	    <icon src="res/icon/android/icon-96-xhdpi.png" density="xhdpi" />
-		<icon src="res/icon/android/icon-144-xxhdpi.png" density="xxhdpi" />
-		<icon src="res/icon/android/icon-192-xhdpi.png" density="xxxhdpi" />
-	</platform>
-
-	<splash src="splash.png" />	
-	<platform name="android">
-		<splash src="res/screen/android/screen-mdpi-portrait.png" density="mdpi" />		
-		<splash src="res/screen/android/screen-hdpi-portrait.png" density="hdpi" />
-	    <splash src="res/screen/android/screen-ldpi-portrait.png" density="ldpi" />
-		<splash src="res/screen/android/screen-xhdpi-portrait.png" density="xhdpi" />
-	</platform>
-
-    <content src="index.html" />
-    <access origin="*" />
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
 </widget>

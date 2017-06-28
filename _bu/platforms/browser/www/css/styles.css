@@ -1,0 +1,564 @@
+html,
+body {
+	font-size: 10px;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('../fonts/Open Sans Light'), local('../fonts/OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v14/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('../fonts/Open Sans Regular'), local('../fonts/OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v14/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('../fonts/Open Sans Bold'), local('../fonts/OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v14/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+.splash-background {
+	background: url(../images/fondo.png);
+	background-size: cover;
+}
+
+.logo {
+	display: block;
+}
+
+.logo.grande {
+	position: absolute;
+	background: url(../images/logo-grande.png);
+	background-size: cover;
+	width: 25.4rem;
+	height: 9.1rem;
+	text-indent: -1000px;
+	overflow: hidden;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+
+.logo.chico {
+	background: url(../images/logo-chico.png) left center no-repeat;
+    background-size: 100% auto;
+    width: 9.45rem;
+    height: 4rem;
+    text-indent: -1000px;
+    overflow: hidden;
+}
+
+.ui-header .ui-btn {
+	border: none;
+	font-size: 15px;
+	color: #FFF;
+}
+
+.ui-footer .ui-navbar li .ui-btn {
+	padding: 2rem 0;
+	border: none;
+	font-size: 1.5rem;
+}
+
+.ui-footer .ui-navbar li .ui-btn i {
+	font-size: 2rem;
+}
+
+.ui-footer .ui-navbar li.ui-block-a .ui-btn {
+	border-left: 0;
+}
+
+.home-view.ui-listview > li > a.ui-btn {
+	border-color: rgba(255,207,15,0.2);
+}
+
+.ui-listview > li.receta-item .info {
+	width: 20rem;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	white-space: normal;
+	line-height: initial;
+}
+
+.ui-listview > li.receta-item .info .titulo {
+    font-family: 'Open Sans';
+    font-weight: lighter;
+    font-size: 3.1rem;
+    color: #FFF;
+    margin-top: 3rem;
+    display: block;
+    line-height: 1em;
+}
+
+.ui-listview > li.receta-item .info hr {
+	border-color: #f1c40f;
+}
+
+.ui-listview > li.receta-item .info .sub-titulo {
+	font-family: 'Open Sans';
+	font-weight: bold;
+	font-size: 2.35rem;
+	color: #f1c40f;
+	text-transform: uppercase;
+}
+
+.ui-listview > li.receta-item > a.ui-btn {
+	padding: 0;
+	line-height: 0;
+	height: 24rem;
+    overflow: hidden;
+}
+
+.ui-listview .ui-li-has-thumb > .ui-btn > img:first-child {
+	position: absolute;
+    width: 100%;
+    max-width: 100%;
+    max-height: initial;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .3;
+}
+
+.home-view.ui-listview > li:not(.ui-first-child) > a.ui-btn {
+	padding: 1.5rem 1em;
+}
+
+#detalle .ui-bar-s {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+50,000000+100,000000+100&1+0,0.71+50,0.65+100,0+100 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.71) 50%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.71) 50%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.71) 50%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+.receta-imagen {
+	margin-top: -9em;
+	margin-left: -3em;
+	margin-right: -3em;
+}
+
+.receta-imagen::after {
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10rem 0 0 60rem;
+	border-color: transparent transparent transparent #1a1a1a;
+}
+
+.receta-imagen img {
+	max-width: 100%;
+}
+
+.receta-info {
+	font-family: 'Open Sans';
+	margin-top: -7em;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 2;
+}
+
+.receta-info .titulo {
+	font-size: 3rem;
+	color: #FFFFFF;
+	line-height: 1.2em;
+	display: block;
+	width: 80%;
+}
+
+.receta-info .preparacion {
+	display: block;
+	font-size: 2rem;
+	font-weight: lighter;
+	color: #f1c40f;
+	float: left;
+}
+
+.receta-info .rating {
+	float: right;
+	font-size: 2em;
+	color: #f1c40f;
+}
+
+#detalle .ui-content {
+	overflow-x: visible;
+}
+
+.detalle-ing-tim {
+	margin: 5rem -3rem 3rem;
+	clear: both;
+}
+
+.detalle-ing-tim .ui-btn {
+	margin: 0;
+    font-size: 1.3rem;
+    font-family: 'Open Sans';
+    background: #f1c40f !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #1a1a1a !important;
+    text-shadow: none !important;
+}
+
+.receta .ui-listview li {
+	background: url(../images/cuchara.png) left center no-repeat;
+	background-size: auto 1.5rem;
+	overflow: hidden;
+	padding: 1.5rem 2rem 1.5rem 10rem;
+	margin: 5rem 0;
+	text-align: right;
+	border: none;
+}
+
+.receta .ui-listview li .instruccion {
+	font-size: 2rem;
+	font-weight: lighter;
+	white-space: normal;
+}
+
+.receta .ui-listview li .aclaracion {
+	font-size: 1.2rem;
+	color: #646464;
+	overflow: visible;
+    white-space: normal;
+}
+
+.receta .ui-listview li span {
+	font-family: 'Open Sans';
+	color: #f1c40f;
+	display: block;
+}
+
+.review {
+	text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+.review span {
+	font-size: 2rem;
+	color: #f1c40f;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	display: block;
+}
+
+.review .ui-controlgroup .ui-btn {
+	font-size: 3.3rem;
+	border: none;
+	padding: .2em;
+}
+
+.review .ui-controlgroup {
+	margin: 2rem 0;
+}
+
+.ingredientes-list .ingrediente {
+	float: left;
+}
+
+.ingredientes-list .cantidad {
+	float: right;
+}
+
+.ui-content > .title {
+	color: #FFF;
+	text-transform: uppercase;
+	display: block;
+	margin: 3rem 0 4rem;
+	font-size: 2.5rem;
+}
+
+.timer {
+	width: 80vw;
+}
+
+.timer input {
+	display: block;
+	padding: 1rem;
+	font-size: 5rem;
+	text-align: center;
+	font-family: 'Open Sans';
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.timer .detalle-ing-tim {
+	margin: 0;
+}
+
+#t_pausar {
+	display: none;
+}
+
+.menu-layout {
+	display: flex;
+}
+
+.menu-layout-left,
+.menu-layout-right {
+	height: calc(100vh - 13.4rem);
+}
+
+.menu-layout-right {
+	overflow: auto;
+}
+
+.menu-layout-right ul {
+	position: relative;
+}
+
+.menu-layout-left .semana-list ,
+.menu-layout-right .recetas-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-layout-left {
+	width: 6rem;
+}
+
+.menu-layout-right {
+	width: calc(100vw - 9rem);
+	margin-right: -3rem;
+}
+
+.semana-list {
+	margin: 0 0 0 -3rem !important;
+	height: 100%;
+}
+
+.semana-list li {
+	flex: 1;
+	position: relative;
+}
+
+.semana-list li a.ui-btn {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 2.6rem;
+	padding: 2.7rem 0;
+	text-align: center;
+	font-weight: lighter;
+	border: none;
+}
+
+.semana-list li.active a.ui-btn {
+	color: #333333;
+	background: #f1c40f;
+	overflow: visible;
+}
+
+.recetas-list {
+	margin: 0 !important;
+}
+
+.recetas-list .receta-item {
+	overflow: hidden;
+	opacity: .5;
+	text-align: right;
+}
+
+.recetas-list .receta-item .actions {
+	display: none;
+}
+
+.recetas-list .receta-item.options .actions {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 999;
+}
+
+	.recetas-list .receta-item.options .actions > div {
+		list-style: none;
+		width: 50%;
+		display: flex;
+		align-items: center;
+	}
+
+	.recetas-list .receta-item.options .actions a {
+		color: #FFF;
+		display: block;
+		text-align: center;
+		width: 100%;
+		font-size: 4rem;
+	}
+
+.recetas-list .receta-item.active {
+	opacity: 1;
+}
+
+.recetas-list .receta-item .info {
+	text-align: right !important;
+}
+
+.recetas-list .receta-item img {
+	margin-top: -.5rem;
+}
+
+.nomenu {
+	font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.ui-listview > .ui-li-static.comprado {
+	opacity: 0.4;
+}
+
+.ui-listview > .ui-li-static.comprado::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 50%;
+	left: 0;
+	background: #f1c40f;
+}
+
+.ui-form h4 {
+	color: #f1c40f;
+	text-transform: uppercase;
+	font-family: 'Open Sans';
+	font-size: 1.3rem;
+}
+
+.ui-form h4 a {
+	color: #f1c40f;
+	margin-left: 2rem;
+}
+
+.ui-form .fa-minus-square {
+	color: #f1c40f;
+}
+
+.ui-form .group ul {
+	margin: 0;
+	padding: 0;
+}
+
+.ui-form .group ul li {
+	display: flex;
+	align-items: center;
+}
+
+.ui-form .group > ul li > div:first-child {
+	flex: 2;
+}
+
+.ui-form .group > ul li > div:last-child {
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 0 0 0 1.5rem;
+}
+
+.ui-form .group-ingredientes > ul li > div > div + div {
+	display: flex;
+}
+
+.ui-form .group-ingredientes .ui-select {
+	margin: 0.6rem 0 .6rem 0.9rem;
+}
+
+.ui-form .group-ingredientes .ui-select > div {
+	background: #333;
+	border: none;
+	padding: 0.9rem 2.5em 0.9rem 1.3rem;
+	border-radius: .3rem;
+    width: 6rem;
+}
+
+.ui-form > .ui-btn {
+	margin: 2rem 0;
+}
+
+.error {
+	display: block;
+	padding: .5rem;
+	background: #c0392b;
+	border: 1px solid #e74c3c;
+	color: #FFF;
+}
+
+.ui-form .imagen_salida img {
+	max-width: 100%;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+	.home-view .ui-first-child {
+		float: left;
+		width: 50%;
+	}
+
+	.home-view.ui-listview > li.receta-item > a.ui-btn {
+		height: calc(100vh - 12rem);
+	}
+
+	.home-view .ui-first-child img {
+		height: 100%;
+		width: auto;
+	}
+
+	.ui-content .ui-listview.recetas-list {
+		flex-direction: row;
+		flex-wrap: wrap;
+		height: calc(100vh - 14rem);
+		overflow: auto;
+	}
+
+	.ui-listview.recetas-list > li.receta-item {
+		width: 33%;
+	}
+
+	.ui-listview.recetas-list > li.receta-item > a.ui-btn {
+		height: calc(44vh - 13rem);
+	}
+
+	.ui-form .ui-form-float-wrap {
+		overflow: hidden;
+	}
+
+	.ui-form .ui-form-float-wrap > div {
+		width: 50%;
+		float: left;
+	}
+
+	.ui-form .ui-form-float-wrap .form-nombre,
+	.ui-form .ui-form-float-wrap .form-tiempo,
+	.ui-form .ui-form-float-wrap .form-imagen {
+		width: 33%;
+		padding: 0 1.5rem;
+		box-sizing: border-box;
+	}
+
+	.ui-form > .ui-btn.detalle-preview {
+		clear: both;
+		margin-top: 18rem;
+	}
+
+}
