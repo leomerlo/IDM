@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script src="jqm/jquery-1.12.3.min.js"></script>
+<script src="jqm/jquery.mobile-1.4.5.js"></script>
+<script src="js/scripts.js"></script>
+
+<title>Sous Chef</title>
+
+</head>
+
+<body>
+
+	<div data-role="page" id="splash" class="splash-background">
+		<div role="main" class="ui-content ">
+			<h1 class="logo grande">Sous Chef - Recetas</h1>
+		</div>
+	</div>
+
+	<div data-role="page" id="home" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<h1 class="logo chico">Sous Chef - Recetas</h1>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<a href="javascript:localStorage.clear()" class="ui-btn">Limpiar Cache</a>
+
+			<ul data-role="listview" class="home-view">
+				<li class="receta-item">
+					<a href="#detalle">
+						<img />
+						<div class="info">
+							<span class="sub-titulo">Hoy Toca</span>
+							<hr>
+							<span class="titulo"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#detalle">
+						<span class="titulo">Martes</span>
+					</a>
+				</li>
+				<li>
+					<a href="#detalle">
+						<span class="titulo">Miercoles</span>
+					</a>
+				</li>
+				<li>
+					<a href="#detalle">
+						<span class="titulo">Jueves</span>
+					</a>
+				</li>
+				<li>
+					<a href="#detalle">
+						<span class="titulo">Viernes</span>
+					</a>
+				</li>
+				<li>
+					<a href="#detalle">
+						<span class="titulo">Sabado</span>
+					</a>
+				</li>
+				<li>
+					<a href="#detalle">
+						<span class="titulo">Domingo</span>
+					</a>
+				</li>
+			</ul>
+
+			<div data-role="popup" id="nomenu" data-overlay-theme="b" data-theme="s">
+				<div class="ui-content">
+					<div class="nomenu">No tenés ningún menú armado <a href="#menu" class="ui-btn ui-btn-s">ARMALO AHORA</a></div>
+				</div>
+			</div>	
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="detalle" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<a href="#" class="ui-btn ui-btn-left" data-rel="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<h1 class="logo chico">Sous Chef - Recetas</h1>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<div class="receta-imagen">
+				<img />
+			</div>
+
+			<div class="receta-info">
+				<span class="titulo"></span>
+				<span class="preparacion">Prep. <span></span></span>
+				<span class="rating">
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+				</span>
+				<div class="ui-grid-a detalle-ing-tim">
+					<div class="ui-block-a">
+						<a href="#ingredientes" class="ui-btn">Ver ingredientes</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#timer" data-rel="popup" class="ui-btn" data-position-to="window">Poner timer</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="receta">
+				<ul data-role="listview">
+					<li>
+						<span class="instruccion"></span>
+						<span class="aclaracion"></span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="review">
+				<span>Dejanos tu opinion</span>
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#" class="ui-btn ui-btn-inline" data-rate="1"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+					<a href="#" class="ui-btn ui-btn-inline" data-rate="2"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+					<a href="#" class="ui-btn ui-btn-inline" data-rate="3"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+					<a href="#" class="ui-btn ui-btn-inline" data-rate="4"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+					<a href="#" class="ui-btn ui-btn-inline" data-rate="5"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+				</div>
+			</div>
+
+			<div data-role="popup" id="timer" data-overlay-theme="b" data-theme="b">
+				<div class="ui-content">
+					<div class="timer">
+						<input type="number" id="timer_time" placeholder="Minutos" />
+						<div class="ui-grid-a detalle-ing-tim">
+							<div class="ui-block-a">
+								<a href="#" id="t_comenzar" class="ui-btn">Comenzar</a>
+								<a href="#" id="t_pausar" class="ui-btn">Pausar</a>
+							</div>
+							<div class="ui-block-b">
+								<a href="#" id="t_reiniciar" data-rel="popup" class="ui-btn">Reiniciar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="ingredientes" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<a href="#" class="ui-btn ui-btn-left" data-rel="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<h1 class="logo chico">Sous Chef - Recetas</h1>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<span class="title">Ingredientes</span>
+
+			<ul data-role="listview" class="ingredientes-list">
+				<li>
+					<span class="ingrediente"></span>
+					<span class="cantidad"><span class="num"></span><span class="medida"></span></span>
+				</li>
+			</ul>
+			
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="menu" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<a href="#" class="ui-btn ui-btn-left" data-rel="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<h1 class="logo chico">Sous Chef - Menu semanal</h1>
+			<a href="#crear-receta" class="ui-btn ui-btn-right">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+			</a>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<div class="menu-layout">
+
+				<div class="menu-layout-left">
+
+					<ul data-role="listview" class="semana-list">
+						<li data-icon="false">
+							<a href="#"></a>
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="menu-layout-right">
+
+					<ul data-role="listview" class="recetas-list">
+						<li class="receta-item" data-icon="false">
+							<a href="#">
+								<img src="" />
+								<div class="info">
+									<span class="titulo"></span>
+								</div>
+							</a>
+							<div class="actions">
+								<div>
+									<a href="#crear-receta" class="editar"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+								</div>
+								<div>
+									<a href="#" class="eliminar"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="crear-receta" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<a href="#" class="ui-btn ui-btn-left" data-rel="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<h1 class="logo chico">Sous Chef - Crear Receta</h1>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<form class="ui-form">
+				<div>
+					<input type="hidden" id="id" name="id" />
+					<h4>Nombre</h4>
+					<input type="text" id="nombre" name="nombre" />
+				</div>
+
+				<div>
+					<h4>Tiempo de preparación (en minutos)</h4>
+					<input type="number" id="tiempo" name="tiempo" />
+				</div>
+
+				<div>
+					<h4>Imagen (1024 x 640)</h4>
+					<div class="imagen_salida"></div>
+					<input type="hidden" id="src_data" name="src_data" />
+					<input type="file" id="imagen" name="imagen" />
+				</div>
+
+				<div class="group group-instrucciones">
+					<h4>Instrucciones <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a></h4>
+					<ul>
+						<li>
+							<div>
+								<input type="text" id="paso_1" name="paso_1" placeholder="Instrucción" class="paso" />
+								<input type="text" id="a-paso_1" name="a-paso_1" placeholder="Aclaración" class="aclaracion" />
+							</div>
+							<div>
+								<i class="fa fa-minus-square" aria-hidden="true"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="group group-ingredientes">
+					<h4>Ingredientes <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a></h4>
+					<ul>
+						<li>
+							<div>
+								<div>
+									<input type="text" id="ing_1" name="ing_1" class="ingrediente" />
+								</div>
+								<div>
+									<input type="number" id="medida-ing_1" name="medida-ing_1" class="medida" />
+									<select name="unidad-ing_1" class="unidad">
+										<option value="A gusto">A gusto</option>
+										<option value="Unidad">Unidad</option>
+										<option value="ml">Ml</option>
+										<option value="gr">Gr</option>
+										<option value="cdta">Cucharadita</option>
+										<option value="cda">Cucharadas</option>
+									</select>
+								</div>
+							</div>
+							<div>
+								<i class="fa fa-minus-square" aria-hidden="true"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<a href="#detalle" class="ui-btn ui-btn-s detalle-preview">Preview</a>
+				<a href="#submit" class="ui-btn ui-btn-s guardar-receta">Guardar</a>
+				<a href="#" class="ui-btn ui-btn cancelar-receta" data-rel="back">Cancelar</a>
+
+			</form>
+			
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="lista-compras" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<a href="#" class="ui-btn ui-btn-left" data-rel="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<h1 class="logo chico">Sous Chef - Recetas</h1>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<span class="title">Lista de compras</span>
+
+			<ul data-role="listview" class="ingredientes-list">
+				<li>
+					<span class="ingrediente"></span>
+					<span class="cantidad"><span class="num"></span> <span class="medida"></span></span>
+				</li>
+			</ul>
+			
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="about" data-theme="s">
+		<div data-role="header" data-theme="s">
+			<a href="#" class="ui-btn ui-btn-left" data-rel="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<h1 class="logo chico">Sous Chef - Recetas</h1>
+		</div>
+	  
+		<div role="main" class="ui-content">
+
+			<div class="receta-imagen">
+				<img src="images/leomerlo.jpg" />
+			</div>
+
+			<div class="receta-info">
+				<span class="titulo">Alumno: Leandro Merlo</span>
+			</div>
+
+			<div class="receta">
+				<ul data-role="listview">
+					<li>
+						<span class="aclaracion">Carrera</span>
+						<span class="instruccion">Diseño web</span>
+					</li>
+					<li>
+						<span class="aclaracion">Materia</span>
+						<span class="instruccion">Interacción con dispositivos móviles</span>
+					</li>
+					<li>
+						<span class="instruccion">Comision A</span>
+					</li>
+					<li>
+						<span class="aclaracion">Turno</span>
+						<span class="instruccion">Noche</span>
+					</li>
+					<li>
+						<span class="instruccion">2do Cuatrimestre</span>
+					</li>
+					<li>
+						<span class="aclaracion">Docente</span>
+						<span class="instruccion">Omar Toyos</span>
+					</li>
+
+				</ul>
+			</div>
+			
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="s">
+			<div data-role="navbar">
+			    <ul>
+			    	<li>
+			    		<a href="#home" data-theme="s">
+			    			<i class="fa fa-home" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#menu" data-theme="s">
+			    			<i class="fa fa-cutlery" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#lista-compras" data-theme="s">
+			    			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="#about" data-theme="s">
+			    			<i class="fa fa-user" aria-hidden="true"></i>
+			    		</a>
+			    	</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
