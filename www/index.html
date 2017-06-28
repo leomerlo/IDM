@@ -18,20 +18,12 @@
 
 <body>
 
-	<div data-role="page" id="splash" class="splash-background">
-		<div role="main" class="ui-content ">
-			<h1 class="logo grande">Sous Chef - Recetas</h1>
-		</div>
-	</div>
-
 	<div data-role="page" id="home" data-theme="s">
 		<div data-role="header" data-theme="s">
 			<h1 class="logo chico">Sous Chef - Recetas</h1>
 		</div>
 	  
 		<div role="main" class="ui-content">
-
-			<a href="javascript:localStorage.clear()" class="ui-btn">Limpiar Cache</a>
 
 			<ul data-role="listview" class="home-view">
 				<li class="receta-item">
@@ -133,13 +125,8 @@
 					<i class="fa fa-star-o" aria-hidden="true"></i>
 					<i class="fa fa-star-o" aria-hidden="true"></i>
 				</span>
-				<div class="ui-grid-a detalle-ing-tim">
-					<div class="ui-block-a">
-						<a href="#ingredientes" class="ui-btn">Ver ingredientes</a>
-					</div>
-					<div class="ui-block-b">
-						<a href="#timer" data-rel="popup" class="ui-btn" data-position-to="window">Poner timer</a>
-					</div>
+				<div class="detalle-ing-tim">
+					<a href="#ingredientes" class="ui-btn">Ver ingredientes</a>
 				</div>
 			</div>
 
@@ -163,23 +150,6 @@
 				</div>
 			</div>
 
-			<div data-role="popup" id="timer" data-overlay-theme="b" data-theme="b">
-				<div class="ui-content">
-					<div class="timer">
-						<input type="number" id="timer_time" placeholder="Minutos" />
-						<div class="ui-grid-a detalle-ing-tim">
-							<div class="ui-block-a">
-								<a href="#" id="t_comenzar" class="ui-btn">Comenzar</a>
-								<a href="#" id="t_pausar" class="ui-btn">Pausar</a>
-							</div>
-							<div class="ui-block-b">
-								<a href="#" id="t_reiniciar" data-rel="popup" class="ui-btn">Reiniciar</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
 		</div>
 
 		<div data-role="footer" data-position="fixed" data-theme="s">
@@ -344,64 +314,66 @@
 		<div role="main" class="ui-content">
 
 			<form class="ui-form">
-				<div>
-					<input type="hidden" id="id" name="id" />
-					<h4>Nombre</h4>
-					<input type="text" id="nombre" name="nombre" />
-				</div>
+				<div class="ui-form-float-wrap">
+					<div class="form-nombre">
+						<input type="hidden" id="id" name="id" />
+						<h4>Nombre</h4>
+						<input type="text" id="nombre" name="nombre" />
+					</div>
 
-				<div>
-					<h4>Tiempo de preparación (en minutos)</h4>
-					<input type="number" id="tiempo" name="tiempo" />
-				</div>
+					<div class="form-tiempo">
+						<h4>Tiempo de preparación (en minutos)</h4>
+						<input type="number" id="tiempo" name="tiempo" />
+					</div>
 
-				<div>
-					<h4>Imagen (1024 x 640)</h4>
-					<div class="imagen_salida"></div>
-					<input type="hidden" id="src_data" name="src_data" />
-					<input type="file" id="imagen" name="imagen" />
-				</div>
+					<div class="form-imagen">
+						<h4>Imagen (1024 x 640)</h4>
+						<div class="imagen_salida"></div>
+						<input type="hidden" id="src_data" name="src_data" />
+						<input type="file" id="imagen" name="imagen" />
+					</div>
 
-				<div class="group group-instrucciones">
-					<h4>Instrucciones <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a></h4>
-					<ul>
-						<li>
-							<div>
-								<input type="text" id="paso_1" name="paso_1" placeholder="Instrucción" class="paso" />
-								<input type="text" id="a-paso_1" name="a-paso_1" placeholder="Aclaración" class="aclaracion" />
-							</div>
-							<div>
-								<i class="fa fa-minus-square" aria-hidden="true"></i>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="group group-ingredientes">
-					<h4>Ingredientes <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a></h4>
-					<ul>
-						<li>
-							<div>
+					<div class="group group-instrucciones">
+						<h4>Instrucciones <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a></h4>
+						<ul>
+							<li>
 								<div>
-									<input type="text" id="ing_1" name="ing_1" class="ingrediente" />
+									<input type="text" id="paso_1" name="paso_1" placeholder="Instrucción" class="paso" />
+									<input type="text" id="a-paso_1" name="a-paso_1" placeholder="Aclaración" class="aclaracion" />
 								</div>
 								<div>
-									<input type="number" id="medida-ing_1" name="medida-ing_1" class="medida" />
-									<select name="unidad-ing_1" class="unidad">
-										<option value="A gusto">A gusto</option>
-										<option value="Unidad">Unidad</option>
-										<option value="ml">Ml</option>
-										<option value="gr">Gr</option>
-										<option value="cdta">Cucharadita</option>
-										<option value="cda">Cucharadas</option>
-									</select>
+									<i class="fa fa-minus-square" aria-hidden="true"></i>
 								</div>
-							</div>
-							<div>
-								<i class="fa fa-minus-square" aria-hidden="true"></i>
-							</div>
-						</li>
-					</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="group group-ingredientes">
+						<h4>Ingredientes <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a></h4>
+						<ul>
+							<li>
+								<div>
+									<div>
+										<input type="text" id="ing_1" name="ing_1" class="ingrediente" />
+									</div>
+									<div>
+										<input type="number" id="medida-ing_1" name="medida-ing_1" class="medida" />
+										<select name="unidad-ing_1" class="unidad">
+											<option value="A gusto">A gusto</option>
+											<option value="Unidad">Unidad</option>
+											<option value="ml">Ml</option>
+											<option value="gr">Gr</option>
+											<option value="cdta">Cucharadita</option>
+											<option value="cda">Cucharadas</option>
+										</select>
+									</div>
+								</div>
+								<div>
+									<i class="fa fa-minus-square" aria-hidden="true"></i>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</div>
 
 				<a href="#detalle" class="ui-btn ui-btn-s detalle-preview">Preview</a>

@@ -155,7 +155,7 @@ body {
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 100px 0 0 600px;
+	border-width: 10rem 0 0 60rem;
 	border-color: transparent transparent transparent #1a1a1a;
 }
 
@@ -506,4 +506,59 @@ body {
 
 .ui-form .imagen_salida img {
 	max-width: 100%;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+	.home-view .ui-first-child {
+		float: left;
+		width: 50%;
+	}
+
+	.home-view.ui-listview > li.receta-item > a.ui-btn {
+		height: calc(100vh - 12rem);
+	}
+
+	.home-view .ui-first-child img {
+		height: 100%;
+		width: auto;
+	}
+
+	.ui-content .ui-listview.recetas-list {
+		flex-direction: row;
+		flex-wrap: wrap;
+		height: calc(100vh - 14rem);
+		overflow: auto;
+	}
+
+	.ui-listview.recetas-list > li.receta-item {
+		width: 33%;
+	}
+
+	.ui-listview.recetas-list > li.receta-item > a.ui-btn {
+		height: calc(44vh - 13rem);
+	}
+
+	.ui-form .ui-form-float-wrap {
+		overflow: hidden;
+	}
+
+	.ui-form .ui-form-float-wrap > div {
+		width: 50%;
+		float: left;
+	}
+
+	.ui-form .ui-form-float-wrap .form-nombre,
+	.ui-form .ui-form-float-wrap .form-tiempo,
+	.ui-form .ui-form-float-wrap .form-imagen {
+		width: 33%;
+		padding: 0 1.5rem;
+		box-sizing: border-box;
+	}
+
+	.ui-form > .ui-btn.detalle-preview {
+		clear: both;
+		margin-top: 18rem;
+	}
+
 }

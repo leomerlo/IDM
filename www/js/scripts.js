@@ -770,46 +770,35 @@ $('document').ready(function(){
 
 	armarlistaCompras();
 
-	// SPLASH
-
-		if(page == '') {
-			setTimeout(hideSplash, 3000);
-		}
-
-	// FIN SPLASH
-
 	// HOME
 
 		var home = $('#home');
 		var semana = home.find('.home-view');
 		var dias = semana.find('li');
 
-		$(document).on( "pagebeforeshow", "#home", function() {
+		var primerDia = hoy;
 
-			var primerDia = hoy;
+		$(data.semana).each(function(i,e){
+	    	var dia = $(dias[i]);
+	    	var receta = data.recetas[e.receta];
+	    	dia.find('a').data('rid',e.receta).show();
 
-			$(data.semana).each(function(i,e){
-		    	var dia = $(dias[i]);
-		    	var receta = data.recetas[e.receta];
-		    	dia.find('a').data('rid',e.receta).show();
+    		if(i == primerDia){
+    			$(dias[0]).find('a').data('rid',e.receta).show();
+	    		$(dias[0]).find('img').attr('src',receta.imagen);
+	    		$(dias[0]).find('.titulo').text(receta.nombre);
+	    		$(dias[0]).show();
+	    		
+	    		if(i != 0){
+	    			$(dia).hide();
+	    		}
+	    	}
 
-	    		if(i == primerDia){
-	    			$(dias[0]).find('a').data('rid',e.receta).show();
-		    		$(dias[0]).find('img').attr('src',receta.imagen);
-		    		$(dias[0]).find('.titulo').text(receta.nombre);
-		    		$(dias[0]).show();
-		    		
-		    		if(i != 0){
-		    			$(dia).hide();
-		    		}
-		    	}
+	    	if(i < primerDia){
+	    		dia.hide();
+	    	}
 
-		    	if(i < primerDia){
-		    		dia.hide();
-		    	}
-
-		    });
-		});
+	    });
 
 		$(document).on("pageshow", "#home", function(){
 			if(nomenu == true){
@@ -1040,23 +1029,25 @@ $('document').ready(function(){
 
     			editar = '';
     			rid = '';
-
     		} else {
-    			$('#nombre').val('');
-    			$('#tiempo').val('');
-    			$('.imagen_salida img').remove();
+    			if(preview){
+	    			$('#nombre').val('');
+	    			$('#tiempo').val('');
+	    			$('.imagen_salida img').remove();
 
-    			var ins_template = $('.group-instrucciones').find('li').first().clone();
-    			var ing_template = $('.group-ingredientes').find('li').first().clone();
+	    			var ins_template = $('.group-instrucciones').find('li').first().clone();
+	    			var ing_template = $('.group-ingredientes').find('li').first().clone();
 
-				$('.group-instrucciones,.group-ingredientes').find('li').remove();
+					$('.group-instrucciones,.group-ingredientes').find('li').remove();
 
-				ins_template.find('input').val('');
-				ins_template.appendTo($('.group-instrucciones ul'));
+					ins_template.find('input').val('');
+					ins_template.appendTo($('.group-instrucciones ul'));
 
-				ing_template.find('input').val('');
-				ing_template.find('select').prop(0);
-				ing_template.appendTo($('.group-ingredientes ul'));
+					ing_template.find('input').val('');
+					ing_template.find('select').prop(0);
+					ing_template.appendTo($('.group-ingredientes ul'));
+    				
+    			}
     		}
 		});
 
