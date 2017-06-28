@@ -24,20 +24,13 @@
     <feature name="http://api.phonegap.com/1.0/camera" />
 	
 	<preference name="phonegap-version" value="cli-6.5.0" />
-	
-    <preference name="orientation" value="portrait" /> 
-	
+    <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" /> 
-	
     <preference name="fullscreen" value="true" /> 
-	
     <preference name="webviewbounce" value="false" /> 
-	
     <preference name="android-minSdkVersion" value="7" /> 
-	
     <preference name="android-installLocation" value="auto" /> 
-
-	<preference name="splashScreenDelay" value="2000" />
+	<preference name="splashScreenDelay" value="4000" />
 
 	<plugin name="cordova-plugin-camera" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
