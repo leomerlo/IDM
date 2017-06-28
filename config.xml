@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<!-- 
-    Los primeros dos atributos de la etiqueta widget, NO los tocamos (xmlns xmlns:gap). El atributo id, especifica un identificador único para la aplicación, 
-				esto es obligatorio si quisiéramos subir la app al Play Store o App Store. El formato DEBE ser una url invertida.
-	El atriburo version, es el número de versión, que va en el siguiente formato:
-			MAJOR.MINOR.PATCH, donde:
-            Major: Son cambios de versión importantes que rompen
-                   compatibilidad de la app hacia atrás (versiones anteriores).
-            Minor: Son cambios que no rompen la compatibilidad hacia atrás.
-            Patch: Son arreglos de errores, agregados pequeños o parches del código.
--->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.davinci.ejemplo"
@@ -94,7 +82,7 @@
 		gap:platform="winphone" gap:role="background" />
 	-->
     
-  	<gap:splash src="imagenes/splash.png" />
+  	<gap:splash src="splash.png" />
     
 	<gap:splash src="res/screen/android/splash.png" 
 		gap:platform="android" gap:density="mdpi" />
