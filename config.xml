@@ -45,11 +45,11 @@
 	<!--style: default lightcontent, blacktranslucent, blackopaque.-->
 
     <icon src="icon.png" />
-   
-	<splash gap:platform="android" gap:density="mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
-	<splash gap:platform="android" gap:density="hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
-    <splash gap:platform="android" gap:density="ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
-	<splash gap:platform="android" gap:density="xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+    
+	<gap:splash gap:platform="android" gap:density="mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+	<gap:splash gap:platform="android" gap:density="hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:density="ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+	<gap:splash gap:platform="android" gap:density="xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
 
 	<access /> 	
 	
