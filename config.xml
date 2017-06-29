@@ -45,18 +45,8 @@
 	<!--style: default lightcontent, blacktranslucent, blackopaque.-->
 
     <icon src="icon.png" />
-    <icon gap:platform="android" src="res/icon/android/icon-36-ldpi.png" gap:density="ldpi" />
-    <icon gap:platform="android" src="res/icon/android/icon-48-mdpi.png" gap:density="mdpi" />
-    <icon gap:platform="android" src="res/icon/android/icon-72-hdpi.png" gap:density="hdpi" />
-    <icon gap:platform="android" src="res/icon/android/icon-96-xhdpi.png" gap:density="xhdpi" />
-	<icon gap:platform="android" src="res/icon/android/icon-144-xxhdpi.png" gap:density="xxhdpi" />
-	<icon gap:platform="android" src="res/icon/android/icon-192-xhdpi.png" gap:density="xxxhdpi" />
     
   	<splash src="splash.png" />
-	<splash gap:platform="android" gap:density="mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
-	<splash gap:platform="android" gap:density="hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
-    <splash gap:platform="android" gap:density="ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
-	<splash gap:platform="android" gap:density="xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
 
 	<access /> 	
 	
