@@ -19,41 +19,22 @@
 	
 	<platform name="android" />
     <preference name="permissions" value="none"/>
+    <feature name="http://api.phonegap.com/1.0/media" />
+	<feature name="http://api.phonegap.com/1.0/file" />
+    <feature name="http://api.phonegap.com/1.0/camera" />
 	
-	<preference name="permissions" value="none"/>
 	<preference name="phonegap-version" value="cli-6.5.0" />
-    <preference name="orientation" value="portrait" /> 
+    <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" /> 
-    <preference name="fullscreen" value="false" /> 
-    <preference name="webviewbounce" value="true" /> 
-    <preference name="prerendered-icon" value="true" /> 
-    <preference name="stay-in-webview" value="false" /> 
-    <preference name="ios-statusbarstyle" value="black-opaque" /> 
-    <preference name="detect-data-types" value="true" /> 
-    <preference name="exit-on-suspend" value="false" /> 
-    <preference name="show-splash-screen-spinner" value="true" /> 
-    <preference name="auto-hide-splash-screen" value="true" /> 
+    <preference name="fullscreen" value="true" /> 
+    <preference name="webviewbounce" value="false" /> 
     <preference name="android-minSdkVersion" value="7" /> 
     <preference name="android-installLocation" value="auto" /> 
-	<preference name="splashScreenDelay" value="6000" />
+	<preference name="splashScreenDelay" value="4000" />
 
-	<plugin name="cordova-plugin-battery-status" source="npm" />
 	<plugin name="cordova-plugin-camera" source="npm" />
-	<plugin name="cordova-plugin-media-capture" source="npm" />
-	<plugin name="cordova-plugin-console" source="npm" />
-	<plugin name="cordova-plugin-contacts" source="npm" />
-	<plugin name="cordova-plugin-device" source="npm" />
-	<plugin name="cordova-plugin-device-motion" source="npm" />
-	<plugin name="cordova-plugin-device-orientation" source="npm" />
-	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
-	<plugin name="cordova-plugin-file-transfer" source="npm" />
-	<plugin name="cordova-plugin-geolocation" source="npm" />
-	<plugin name="cordova-plugin-globalization" source="npm" />
-	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="cordova-plugin-media" source="npm" />
-	<plugin name="cordova-plugin-network-information" source="npm" />
-	<plugin name="cordova-plugin-vibration" source="npm" />
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	
 	<plugin name="cordova-plugin-statusbar" source="npm"/>
@@ -65,11 +46,7 @@
 
     <icon src="icon.png" />
     
-	<gap:splash src="res/screen/android/splash.png" 
-		gap:platform="android" gap:density="mdpi" />
-		
-	<gap:splash src="res/screen/android/splash_hdpi.png" 
-		gap:platform="android" gap:density="hdpi" />
+  	<splash src="splash.png" />
 
 	<access /> 	
 	
