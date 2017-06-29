@@ -37,9 +37,23 @@
     <preference name="android-installLocation" value="auto" /> 
 	<preference name="splashScreenDelay" value="6000" />
 
+	<plugin name="cordova-plugin-battery-status" source="npm" />
 	<plugin name="cordova-plugin-camera" source="npm" />
+	<plugin name="cordova-plugin-media-capture" source="npm" />
+	<plugin name="cordova-plugin-console" source="npm" />
+	<plugin name="cordova-plugin-contacts" source="npm" />
+	<plugin name="cordova-plugin-device" source="npm" />
+	<plugin name="cordova-plugin-device-motion" source="npm" />
+	<plugin name="cordova-plugin-device-orientation" source="npm" />
+	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
+	<plugin name="cordova-plugin-file-transfer" source="npm" />
+	<plugin name="cordova-plugin-geolocation" source="npm" />
+	<plugin name="cordova-plugin-globalization" source="npm" />
+	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="cordova-plugin-media" source="npm" />
+	<plugin name="cordova-plugin-network-information" source="npm" />
+	<plugin name="cordova-plugin-vibration" source="npm" />
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	
 	<plugin name="cordova-plugin-statusbar" source="npm"/>
