@@ -148,6 +148,7 @@ body {
 	margin-top: -9em;
 	margin-left: -3em;
 	margin-right: -3em;
+	min-height: 18rem;
 }
 
 .receta-imagen::after {
