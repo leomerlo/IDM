@@ -773,42 +773,21 @@ $('document').ready(function(){
 	// HOME
 
 		var home = $('#home');
-		var semana = home.find('.home-view');
-		var dias = semana.find('li');
+		var home_semana = home.find('.home-view');
+		var home_dias = home_semana.find('li');
 
-		var primerDia = hoy;
+		if(nomenu == true){
+			$("#nomenu").popup("open");
+			nomenu = false;
+		}
 
-		$(data.semana).each(function(i,e){
-	    	var dia = $(dias[i]);
-	    	var receta = data.recetas[e.receta];
-	    	dia.find('a').data('rid',e.receta).show();
-
-    		if(i == primerDia){
-    			$(dias[0]).find('a').data('rid',e.receta).show();
-	    		$(dias[0]).find('img').attr('src',receta.imagen);
-	    		$(dias[0]).find('.titulo').text(receta.nombre);
-	    		$(dias[0]).show();
-	    		
-	    		if(i != 0){
-	    			$(dia).hide();
-	    		}
-	    	}
-
-	    	if(i < primerDia){
-	    		dia.hide();
-	    	}
-
-	    });
+		updateHome();
 
 		$(document).on("pageshow", "#home", function(){
-			if(nomenu == true){
-				$("#nomenu").popup("open");
-				nomenu = false;
-			}
+			updateHome();
 		});
 
-		$(dias).on('click','a',function(){
-
+		$(home_dias).on('click','a',function(){
 			rid = $(this).data('rid');
 		});
 	// FIN HOME
@@ -903,23 +882,15 @@ $('document').ready(function(){
 
 		    dia.remove();
 
-		    armarListaReceta(receta,recetas,data.recetas);
+		    //armarListaReceta(receta,recetas,data.recetas);
+		    //marcarReceta($(semana).find('li.active').data('dia'),recetas);
 
 		    $(semana).on('click','a',function(){
 		    	semana.find('.active').removeClass('active');
 		    	var dia = $(this).data('dia');
 
 		    	$(this).parent().addClass('active');
-		    	$(data.semana).each(function(i,e){
-		    		var receta = e.receta;
-
-		    		if(e.dia == dia){
-		    			recetas.find('.active').removeClass('active');
-		    			receta = recetas.find('li').eq(receta);
-		    			receta.addClass('active');
-		    			$('.menu-layout-right').scrollTop(receta.position().top);
-		    		}
-		    	});
+		    	marcarReceta(dia,recetas);
 		    });
 
 		    $(recetas).on('click','a',function(){
@@ -970,7 +941,6 @@ $('document').ready(function(){
 		    		armarListaReceta(receta,recetas,data.recetas);
 		    		$('.menu-layout-right').scrollTop(recetas.find('.active').position().top);
 		    	});
-
 		    });
 
 		    $(recetas).on('click','.editar',function(){
@@ -1330,7 +1300,6 @@ function armarReceta(){
 	} else {
 		return arma_receta;
 	}
-
 }
 
 function saveData(){
@@ -1351,4 +1320,47 @@ function imagenA64() {
         };
     })(file);
     reader.readAsDataURL(file); 
+}
+
+function updateHome(){
+	var home = $('#home');
+	var semana = home.find('.home-view');
+	var dias = semana.find('li');
+
+	var primerDia = hoy;
+
+	$(data.semana).each(function(i,e){
+    	var dia = $(dias[i]);
+    	var receta = data.recetas[e.receta];
+    	dia.find('a').data('rid',e.receta).show();
+
+		if(i == primerDia){
+			$(dias[0]).find('a').data('rid',e.receta).show();
+    		$(dias[0]).find('img').attr('src',receta.imagen);
+    		$(dias[0]).find('.titulo').text(receta.nombre);
+    		$(dias[0]).show();
+    		
+    		if(i != 0){
+    			$(dia).hide();
+    		}
+    	}
+
+    	if(i < primerDia){
+    		dia.hide();
+    	}
+
+    });
+}
+
+function marcarReceta(dia,recetas){
+	$(data.semana).each(function(i,e){
+		var receta = e.receta;
+
+		if(e.dia == dia){
+			recetas.find('.active').removeClass('active');
+			receta = recetas.find('li').eq(receta);
+			receta.addClass('active');
+			$('.menu-layout-right').scrollTop(receta.position().top);
+		}
+	});
 }
