@@ -1030,7 +1030,7 @@ $('document').ready(function(){
     			editar = '';
     			rid = '';
     		} else {
-    			if(preview){
+    			if(!preview){
 	    			$('#nombre').val('');
 	    			$('#tiempo').val('');
 	    			$('.imagen_salida img').remove();
