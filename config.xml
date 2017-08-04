@@ -9,7 +9,7 @@
 
     <!-- Descripción para el Play Store -->
     <description>
-        Asistente de cocina.
+        Guardá tus recetas favoritas, arma tu menu semanal y segui las instrucciones. Con tu asistente de cocina personal.
     </description>
 
     <!-- Los datos del autor para el PlayStore -->
@@ -45,7 +45,7 @@
 	<!--style: default lightcontent, blacktranslucent, blackopaque.-->
 
     <icon src="icon.png" />
-    
+
   	<splash src="splash.png" />
 
 	<access /> 	
