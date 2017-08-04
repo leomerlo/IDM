@@ -160,6 +160,10 @@ body {
 	border-color: transparent transparent transparent #1a1a1a;
 }
 
+.receta-imagen figure {
+	margin: 0;
+}
+
 .receta-imagen img {
 	max-width: 100%;
 }
@@ -417,6 +421,10 @@ body {
 
 .recetas-list .receta-item .info {
 	text-align: right !important;
+}
+
+.recetas-list .receta-item figure {
+	margin: 0;
 }
 
 .recetas-list .receta-item img {

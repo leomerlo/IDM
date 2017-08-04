@@ -802,7 +802,7 @@ $('document').ready(function(){
 				var receta = data.recetas[rid];
 			}
 
-			detalle.find('.receta-imagen').children('img').attr('src',receta.imagen);
+			detalle.find('.receta-imagen').find('img').attr('src',receta.imagen);
 			detalle.find('.titulo').text(receta.nombre);
 			detalle.find('.preparacion').find('span').text(receta.tiempo);
 			
