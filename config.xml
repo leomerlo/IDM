@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.davinci.ejemplo"
-        version   = "0.1.0">
+        version   = "0.2.0">
 	
     <!-- Esta etiqueta define el NOMBRE de la app (con él va a figurar tanto en el store como en el dispositivo) -->
     <name>Sous Chef</name>
@@ -41,8 +41,6 @@
 	<preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#ffff00" />
     <preference name="StatusBarStyle" value="lightcontent" />
-	
-	<!--style: default lightcontent, blacktranslucent, blackopaque.-->
 
     <icon src="icon.png" />
 
